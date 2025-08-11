@@ -13,26 +13,15 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4  # use latest
+        uses: actions/checkout@v4
 
       - name: Install uv
         uses: astral-sh/setup-uv@v1
 
-      - name: Set up Python 3.13
-        run: uv python install 3.13
+      - name: Create Venv & Install dependencies
+        run: |
+          uv venv
+          uv sync
 
-      - name: Init UV
-        run: uv init
-
-      - name: Create Venv
-        run: uv venv
-
-      - name: Install dependencies
-        run: uv sync
-
-      - name: Run tests
-        run: uv run pytest -v --maxfail=1 --disable-warnings
-
-      - name: Run Coverage
-        run: uv run pytest --cov=app --cov-report=term-missing
-
+      - name: Run tests with coverage
+        run: uv run pytest -v --maxfail=1 --disable-warnings --cov=app --cov-report=term-missing
