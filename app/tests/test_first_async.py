@@ -2,7 +2,6 @@ import asyncio
 from unittest.mock import patch
 
 import pytest
-
 from first_asyncio import custom_routine
 
 

@@ -11,6 +11,14 @@ dependencies = [
     "pytest-cov>=6.2.1",
 ]
 
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q"
+testpaths = [
+    "app/tests",
+    "integration",
+]
+
 [tool.ruff]
 # Set the maximum line length for formatting and linting.
 line-length = 100
