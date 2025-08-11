@@ -1,0 +1,15 @@
+name: Lint
+
+on: [push, pull_request]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: psf/black@stable # Uses the official Black GitHub Action
+        with:
+          # Optional: Specify the Black version to use (e.g., "24.4.0")
+          # version: "24.4.0"
+          # Optional: Read Black version from pyproject.toml
+          use_pyproject: true

@@ -1,0 +1,27 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+env/
+
+# Editor/IDE files
+.vscode/
+.idea/
+
+# Logs and temporary files
+*.log
+*.tmp
+*~
+
+# Database files
+*.sqlite3
+*.db
+
+# Sensitive information (example)
+config.ini
+.env
