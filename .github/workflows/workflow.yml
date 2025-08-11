@@ -24,5 +24,5 @@ jobs:
           uv sync
 
       - name: Run tests with coverage
-        run: uv run pytest tests/ -v --maxfail=1 --disable-warnings --cov=Asyncio_Learning_Path/first_asyncio --cov-report=term-missing
+        run: uv run pytest tests/ -v --maxfail=1 --disable-warnings --cov=app/tests --cov-report=term-missing
 
