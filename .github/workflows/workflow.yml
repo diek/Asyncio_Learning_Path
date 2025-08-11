@@ -32,5 +32,7 @@ jobs:
 
       - name: Run tests
         run: uv run pytest -v --maxfail=1 --disable-warnings
+
+      - name: Run Coverage
         run: uv run pytest --cov=app --cov-report=term-missing
 
