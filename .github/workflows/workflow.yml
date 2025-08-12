@@ -23,6 +23,12 @@ jobs:
           uv venv
           uv sync
 
+      - name: Verify test directory exists
+        run: |
+          if [ ! -d "app/tests" ]; then
+            echo "❌ Test directory 'app/tests' not found!"
+            exit 1
+          fi
+
       - name: Run tests with coverage
         run: uv run pytest app/tests -v --maxfail=1 --disable-warnings --cov=app --cov-report=term-missing
-
